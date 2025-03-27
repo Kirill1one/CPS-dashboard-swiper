@@ -1,0 +1,432 @@
+@font-face {
+    font-family: "TT Lakes";
+    src: url("./fonts/TTLakesCompressed-Black.woff");
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "TT Lakes";
+    src: url("./fonts/TTLakesCondensed-Bold.woff");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "TT Lakes";
+    src: url("./fonts/TTLakes-Medium.woff");
+    font-weight: 500;
+}
+
+:root {
+    --black: #1B1C21;
+    --grey: #7E7E82;
+    --accent-color: #41F6D7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "TT Lakes";
+    color: #1B1C21;
+}
+
+h1 {
+    font-size: 1.75rem;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+
+.nav {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 30px 29px 32px 22px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 306px;
+}
+
+.nav_top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav_logo_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav_close_mobile {
+    background: transparent;
+    border: none;
+    display: none;
+}
+
+.nav_links {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 37px;
+}
+
+.nav_links a:hover {
+    color: var(--grey);
+    position: relative
+}
+
+.nav_links a:hover::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
+    left: -20px;
+}
+
+.nav_bottom {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav_contacts {
+    display: flex;
+    gap: 16px;
+}
+
+.nav_email {
+    margin: 16px 0 12px;
+}
+
+.nav_phone {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+
+.nav_lang {
+    color: var(--grey);
+}
+
+
+
+
+.main_container {
+    padding-left: 306px;
+    background-color: #F8F8F8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main_head {
+    padding: 42px 30px 7px 35px;
+}
+
+.main_head_top {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.main_head_top h1 {
+    position: relative;
+}
+
+.main_head_top h1::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
+    left: -33px;
+}
+
+.main_categories a {
+    display: inline-block;
+    padding: 8px 22px;
+    border: solid 2px transparent;
+    border-radius: 6px;
+    color: var(--grey);
+}
+
+.main_categories a:hover {
+    border-color: #B8FFEC;
+    background-color: #ffffff;
+}
+
+.main_head_top_buttons {
+    display: flex;
+    gap: 32px;
+}
+
+.main_head_top_buttons a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.main_about_us {
+    padding: 0 28px 51px 34px;
+    display: flex;
+    gap: 36px;
+}
+
+.main_about_us_image img {
+    border-radius: 6px;
+}
+
+.main_repair {
+    overflow: hidden;
+}
+
+.main_repair_heading {
+    background-image: linear-gradient(to right, #ffffff00, #ffffff);
+    border-top: solid 1px #D9FFF5;
+    padding: 16px 32px;
+    text-transform: uppercase;
+    color: var(--grey);
+}
+
+
+.main_repair_brands {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 72px 72px;
+    gap: 16px 32px;
+    padding: 24px 32px;
+}
+
+.repair_brands_desktop {
+    display: grid;
+}
+
+.main_head_top_mobile,
+.main_repair_brands_mobile,
+.categories_mobile,
+.swiper_mobile {
+    display: none;
+}
+
+
+
+.main_brand_card {
+    background-color: #ffffff;
+    display: flex;
+    padding: 16px;
+    justify-content: space-between;
+    border-radius: 6px;
+    align-items: center;
+
+}
+
+.main_brand_card img {
+    max-width: 70%;
+    max-height: 100%;
+}
+
+.main_repair_expand {
+    padding-left: 31px;
+}
+
+.footer {
+    margin-top: auto;
+    padding: 21px 33px 21px 31px;
+}
+
+.footer_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_container a,
+.footer_container p {
+    color: var(--grey);
+}
+
+.footer_container p:nth-of-type(2) {
+    text-align: right;
+}
+
+
+@media (max-width:768px) {
+    .main_container {
+        padding: 0;
+        margin-top: 88px;
+        position: relative;
+    }
+
+    .main_overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: #fffffff5;
+        transform: translateX(-100%);
+        z-index: 5;
+        top: 0;
+        left: 0;
+    }
+
+    .nav {
+        transform: translateX(-100%);
+        transition: 0.2s;
+        z-index: 10;
+        padding: 24px 24px 32px 24px;
+    }
+
+    .main_head {
+        overflow: hidden;
+    }
+
+    .main_head_top_mobile {
+        display: flex;
+        justify-content: space-between;
+        background-color: #ffffff;
+        padding: 24px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 88px;
+        z-index: 4;
+    }
+
+    .main_head_top_buttons {
+        display: none;
+    }
+
+    .main_categories a {
+        width: max-content;
+    }
+
+    .nav_nav_close_mobile {
+        display: block;
+    }
+
+    .main_head_right_mobile,
+    .main_head_left_mobile {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .divider {
+        width: 2px;
+        height: 32px;
+        background-color: #EAEAEA;
+        margin: 0 4px;
+    }
+
+    .main_menu_open {
+        background-color: transparent;
+        border: none;
+    }
+
+    .main_about_us_image,
+    .main_about_us_text {
+        width: 50%;
+    }
+
+    .main_about_us_image img {
+        width: 100%;
+    }
+
+    .main_repair_brands {
+        gap: 16px 24px;
+        grid-template-columns: repeat(4, minmax(224px, 240px));
+    }
+
+
+}
+
+@media (max-width:420px) {
+
+    .categories_desktop,
+    .main_repair_expand {
+        display: none;
+    }
+
+    .categories_mobile {
+        display: flex;
+    }
+
+    .categories_mobile .swiper-wrapper {
+        width: max-content;
+    }
+
+    .main_head_left_mobile .divider,
+    .main_head_right_mobile a:first-child,
+    .main_head_right_mobile a:nth-child(2),
+    .main_head_right_mobile a:nth-child(3) {
+        display: none;
+    }
+
+    .main_head_right_mobile .divider {
+        margin-left: 20px;
+    }
+
+
+    .main_about_us {
+        flex-direction: column;
+    }
+
+    .main_about_us p:nth-of-type(2) {
+        display: none;
+    }
+
+    .main_about_us_image,
+    .main_about_us_text {
+        width: 100%;
+    }
+
+    .main_about_us_image img {
+        width: 100%;
+    }
+
+    .main_repair_brands {
+        display: flex;
+        gap: 0;
+        padding: 40px 0;
+    }
+
+    .repair_brands_desktop {
+        display: none;
+    }
+
+    .main_repair_brands_mobile {
+        display: block;
+    }
+
+    .main_repair_brands a {
+        height: 72px;
+        width: 240px;
+
+    }
+
+    .swiper_mobile {
+        display: block;
+    }
+
+    .footer_container {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .footer_container p:nth-of-type(2) {
+        text-align: center;
+    }
+
+}
